@@ -1,0 +1,12 @@
+class Hello
+  def initialize(message, printer = method(:puts))
+    @message = message
+    @printer = printer
+  end
+
+  def quack
+    @printer.(@message)
+  end
+end
+
+Hello.new('Hello World!').quack
