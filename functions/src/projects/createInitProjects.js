@@ -1,4 +1,4 @@
-module.exports = ({ languageTemplates, admin }) => async (user) => {
+module.exports = ({ languageTemplates, admin }) => (user) => {
   const { uid } = user;
   let updates = {};
 
