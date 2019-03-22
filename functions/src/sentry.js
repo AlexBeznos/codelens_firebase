@@ -1,5 +1,5 @@
 const Sentry = require('@sentry/node');
-Sentry.init({dsn: 'https://f15d685905b84396aa23c985a709f8a5@sentry.io/1354328'});
+Sentry.init({dsn: 'https://21eac94321534e2dbf324fd345a00535@sentry.io/1408656'});
  
 const httpWithSentry = (callback) => {
   return (req, res) => {

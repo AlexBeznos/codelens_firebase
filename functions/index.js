@@ -8,5 +8,7 @@ const languageTemplates = require('./src/templates/languages');
 
 const container = { admin, languageTemplates };
 
-exports.onUserCreate = funstions.auth.user().onCreate(eventWithSentry(createInitProjects(container)));
+admin.initializeApp();
+
+exports.onUserCreate = functions.auth.user().onCreate(eventWithSentry(createInitProjects(container)));
 

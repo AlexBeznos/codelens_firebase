@@ -1,5 +1,5 @@
 module.exports = ({ languageTemplates, admin }) => (user) => {
-  const { uid } = user;
+  const { uid, photoURL, displayName } = user;
   let updates = {};
 
   Object.keys(languageTemplates).forEach((language) => {
@@ -7,11 +7,12 @@ module.exports = ({ languageTemplates, admin }) => (user) => {
 
     updates[`/projects/${recordUid}`] = {
       language,
-      owner:         uid,
-      participants:  [uid],
+      colorSchema:   'oceanicNext',
       currentEditor: uid,
+      owner:         uid,
+      editors:       [{ uid, photoURL, displayName }],
       title:         `Hello World! with ${language}`,
-      entry:         languageTemplates[language]
+      data:          languageTemplates[language]
     };
   });
 
